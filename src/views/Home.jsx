@@ -19,19 +19,18 @@ export const Home = () => {
   if (isLoading) return 'Loading...'
   if (error) return 'NOT FOUND 404...'
 
-  const products = null
+  const products = data.data
+  /*if (data) {
+    const products = data.data.filter(product => {
+      if (categorieCurrent.name !== "All") {
+        return product.category_id === categorieCurrent.id;
+      } else {
+        return product;
+      }
+    });
+  }*/
 
-  if(data){
-    products = data.data.filter(product => {
-    if (categorieCurrent.name !== "All") {
-      return product.category_id === categorieCurrent.id;
-    } else {
-      return product;
-    }
-  });
-  }
 
-  
 
   return (
     <>
@@ -41,7 +40,7 @@ export const Home = () => {
       </p>
 
       <div className='grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
-        {products.map(product => (
+        {products && products.map(product => (
           <Product
             key={product.id}
             product={product}
