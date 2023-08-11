@@ -45,7 +45,8 @@ export const StoreProvider = ({ children }) => {
     }, [])
 
     const handleClickCategorie = id => {
-        const category = categories.filter(categorie => categorie.id === id)[0];
+        //const category = categories.filter(categorie => categorie.id === id)[0];
+        const category = null
         setCategorieCurrent(category);
     }
 
