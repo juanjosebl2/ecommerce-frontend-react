@@ -2,6 +2,7 @@ import React from 'react'
 import { Category } from './Category'
 import useStore from '../hooks/useStore'
 import { useAuth } from '../hooks/useAuth'
+import { Summary } from './Summary'
 
 export const Sidebar = () => {
 
@@ -16,10 +17,10 @@ export const Sidebar = () => {
     }
     
     return (
-        <aside className='md:w-72'>
-            <div className='p-4'>
+        <aside className='md:w-72 '>
+            <div className='flex justify-center pt-3'>
                 <img
-                    className='w-40'
+                    className='w-40 '
                     src="img/logo.svg"
                     alt="image logo"
                 />
@@ -42,6 +43,7 @@ export const Sidebar = () => {
                     LOG OUT
                 </button>
             </div>
+            <Summary />
         </aside>
     )
 }

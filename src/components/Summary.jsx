@@ -23,7 +23,7 @@ export const Summary = () => {
 
   };
   const dropdownContent = isOpen ? (
-    <div className='w-72 h-screen overflow-y-scroll p-5'>
+    <div className='h-screen overflow-y-scroll p-5'>
       <h1 className='text-4xl font-black'>Summary</h1>
       <p className='text-lg my-5'>
         Here you will see the summary and total of your order

@@ -3,7 +3,6 @@ import Modal from 'react-modal'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import { Sidebar } from '../components/Sidebar'
-import { Summary } from '../components/Summary'
 import useStore from "../hooks/useStore"
 import { ModalProduct } from '../components/ModalProduct'
 import { useAuth } from '../hooks/useAuth';
@@ -25,7 +24,7 @@ Modal.setAppElement('#root')
 export default function Layout() {
 
   const { modal } = useStore();
-  useAuth({middleware: 'auth'})
+  useAuth({ middleware: 'auth' })
 
   return (
     <>
@@ -36,7 +35,6 @@ export default function Layout() {
           <Outlet />
         </main>
 
-        <Summary />
       </div>
 
       <Modal isOpen={modal} style={customStyles} >
