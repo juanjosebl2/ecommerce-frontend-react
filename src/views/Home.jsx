@@ -16,18 +16,22 @@ export const Home = () => {
 
   const { data, error, isLoading } = useSWR('/api/products', fetcher, { refreshInterval: 1000 })
 
-  console.log(data)
-
   if (isLoading) return 'Loading...'
   if (error) return 'NOT FOUND 404...'
 
-  const products = data.data.filter(product => {
+  const products = null
+
+  if(data){
+    products = data.data.filter(product => {
     if (categorieCurrent.name !== "All") {
       return product.category_id === categorieCurrent.id;
     } else {
       return product;
     }
   });
+  }
+
+  
 
   return (
     <>
