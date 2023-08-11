@@ -6,10 +6,13 @@ import { useAuth } from '../hooks/useAuth'
 export const Sidebar = () => {
 
     const { categories } = useStore();
-    const {logout, user} = useAuth({middleware: 'auth'})
+    const { logout, user } = useAuth({ middleware: 'auth' })
 
     // Change array for put in first place category All
-    const allCategoryIndex = categories.findIndex(category => category.name === 'All');
+    const allCategoryIndex = null
+    if (categories) {
+        allCategoryIndex = categories.findIndex(category => category.name === 'All');
+    }
 
     if (allCategoryIndex !== -1) {
         const allCategory = categories.splice(allCategoryIndex, 1)[0];
