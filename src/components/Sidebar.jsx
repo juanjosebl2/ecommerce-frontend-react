@@ -9,7 +9,7 @@ export const Sidebar = () => {
     const { logout, user } = useAuth({ middleware: 'auth' })
 
     // Change array for put in first place category All
-    const allCategoryIndex = categories.findIndex(category => category.name === 'All');
+    const allCategoryIndex = categories && categories.findIndex(category => category.name === 'All');
     if (allCategoryIndex !== -1) {
         const allCategory = categories.splice(allCategoryIndex, 1)[0];
         categories.unshift(allCategory);
