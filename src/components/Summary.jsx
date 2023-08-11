@@ -34,7 +34,7 @@ export const Summary = () => {
             Dont there are elements in your order
           </p>
         ) : (
-          order.map(product => (
+          order?.map(product => (
             <SummaryProduct
               key={product.id}
               product={product}

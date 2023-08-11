@@ -45,7 +45,7 @@ export const Login = () => {
                     onSubmit={handleSubmit}
                     noValidate
                 >
-                    {errors ? errors.map((error, i) => <Alert key={i}>{error}</Alert>) : null}
+                    {errors ? errors?.map((error, i) => <Alert key={i}>{error}</Alert>) : null}
 
                     <div className=' mb-4'>
                         <label

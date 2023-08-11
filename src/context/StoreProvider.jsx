@@ -63,7 +63,7 @@ export const StoreProvider = ({ children }) => {
             const { data } = await clientAxios.post('/api/orders',
                 {
                     total,
-                    products: order.map(product => {
+                    products: order?.map(product => {
                         return {
                             id: product.id,
                             amount: product.amount
@@ -98,7 +98,7 @@ export const StoreProvider = ({ children }) => {
     // ... order, product, it have a copy of order and add product
     const handleAgreeOrderd = ({ category_id, ...product }) => {
         if (order.some(orderState => orderState.id === product.id)) {
-            const orderUpdated = order.map(orderState => orderState.id === product.id ? product : orderState)
+            const orderUpdated = order?.map(orderState => orderState.id === product.id ? product : orderState)
             setOrder(orderUpdated)
             toast.success('Saved successfully')
         } else {

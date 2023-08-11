@@ -23,7 +23,7 @@ export const Products = () => {
                 Manage availability from here.
             </p>
             <div className='grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
-                {data.data.map(product => (
+                {data?.data?.map(product => (
                     <Product
                         key={product.id}
                         product={product}

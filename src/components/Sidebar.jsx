@@ -26,7 +26,7 @@ export const Sidebar = () => {
             </div>
             <p className='my-10 text-xl text-center'>Hello: {user?.name}</p>
             <div className='mt-10'>
-                {categories.map(category => (
+                {categories?.map(category => (
                     <Category
                         key={category.id}
                         category={category}

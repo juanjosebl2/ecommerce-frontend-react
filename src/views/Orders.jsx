@@ -25,13 +25,13 @@ export const Orders = () => {
                 Manage orders from here.
             </p>
             <div className='grid grid-cols-2 gap-5'>
-                {data.data.data.map(order => (
+                {data?.data?.data?.map(order => (
                     <div key={order.id} className="p-5 bg-white shadow space-y-2 border-b">
                         <p className='text-xl font-bold text-slate-600'>
                             Order content:
                         </p>
 
-                        {order.products.map(product => (
+                        {order?.products?.map(product => (
                             <div
                                 key={product.id}
                                 className='border-b border-b-slate-200 last-of-type:border-none py-4'

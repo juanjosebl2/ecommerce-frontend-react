@@ -43,7 +43,7 @@ export const Register = () => {
                 <form
                     onSubmit={handleSubmit}
                 >
-                    {errors ? errors.map((error, i) => <Alert key={i}>{error}</Alert>)  : null }
+                    {errors ? errors?.map((error, i) => <Alert key={i}>{error}</Alert>)  : null }
                     <div className=' mb-4'>
                         <label
                             className="text-slate-800"
