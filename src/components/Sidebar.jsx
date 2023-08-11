@@ -3,6 +3,7 @@ import { Category } from './Category'
 import useStore from '../hooks/useStore'
 import { useAuth } from '../hooks/useAuth'
 import { Summary } from './Summary'
+import { MdAccountCircle } from "react-icons/md"
 
 export const Sidebar = () => {
 
@@ -25,7 +26,10 @@ export const Sidebar = () => {
                     alt="image logo"
                 />
             </div>
-            <p className='my-10 text-xl text-center'>Hello: {user?.name}</p>
+            <p className='my-10 text-xl flex justify-center uppercase'>
+                <MdAccountCircle size="1.4em" className=' mr-2'/>
+                {user?.name}
+            </p>
             <div className='mt-10'>
                 {categories?.map(category => (
                     <Category
