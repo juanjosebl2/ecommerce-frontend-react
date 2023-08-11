@@ -109,13 +109,13 @@ export const StoreProvider = ({ children }) => {
     }
 
     const handleEditAmount = productEdit => {
-        const productUpdated = order.filter(product => product.id === productEdit.id)[0]
+        const productUpdated = order && order.filter(product => product.id === productEdit.id)[0]
         setProduct(productUpdated)
         setModal(!modal)
     }
 
     const handleDeleteOrder = productDelete => {
-        const orderUpdated = order.filter(product => product.id !== productDelete.id)
+        const orderUpdated = order && order.filter(product => product.id !== productDelete.id)
         setOrder(orderUpdated)
         toast.success('Deleted succesfully')
     }

@@ -10,7 +10,7 @@ export const ModalProduct = () => {
 
     useEffect(() => {
         if(order.some( orderState => orderState.id === product.id )) {
-            const productEdit = order.filter( orderState => orderState.id === product.id)[0]
+            const productEdit = order && order.filter( orderState => orderState.id === product.id)[0]
             setAmount(productEdit.amount)
             setEdit(true)
         } 
