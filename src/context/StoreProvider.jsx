@@ -45,7 +45,7 @@ export const StoreProvider = ({ children }) => {
     }, [])
 
     const handleClickCategorie = id => {
-        const category = categories && categories.filter(categorie => categorie.id === id)[0];
+        const category = categories?.filter(categorie => categorie.id === id)[0];
         setCategorieCurrent(category);
     }
 
@@ -115,7 +115,7 @@ export const StoreProvider = ({ children }) => {
     }
 
     const handleDeleteOrder = productDelete => {
-        const orderUpdated = order && order.filter(product => product.id !== productDelete.id)
+        const orderUpdated = order?.filter(product => product.id !== productDelete.id)
         setOrder(orderUpdated)
         toast.success('Deleted succesfully')
     }
