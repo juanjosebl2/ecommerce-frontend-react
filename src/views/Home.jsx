@@ -19,18 +19,13 @@ export const Home = () => {
   if (isLoading) return 'Loading...'
   if (error) return 'NOT FOUND 404...'
 
-  const products = data.data
-  /*if (data) {
-    const products = data.data.filter(product => {
-      if (categorieCurrent.name !== "All") {
-        return product.category_id === categorieCurrent.id;
-      } else {
-        return product;
-      }
-    });
-  }*/
-
-
+  const products = data.data.filter(product => {
+    if (categorieCurrent.name !== "All") {
+      return product.category_id === categorieCurrent.id;
+    } else {
+      return product;
+    }
+  });
 
   return (
     <>
